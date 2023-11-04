@@ -53,8 +53,10 @@ app.get("/api/v1/sliders", async(req, res)=>{
 
 // GET endpoint for players
 app.get("/api/v1/players", async(req,res)=>{
-    const cursor = playersCollection.find()
-    const result = await cursor.toArray()
+    const page = parseInt(req.query?.page)
+    const limit = parseInt(req.query?.limit)
+    const skip = (page)*limit;
+    const result = await playersCollection.find().skip(skip).limit(limit).toArray()
     res.send(result)
 })
 
