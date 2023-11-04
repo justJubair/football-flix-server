@@ -58,6 +58,13 @@ app.get("/api/v1/players", async(req,res)=>{
     res.send(result)
 })
 
+// GET endpoint for players count
+app.get("/api/v1/playersCount", async(req,res)=>{
+  const count = await playersCollection.estimatedDocumentCount()
+  const result = {count}
+  res.send(result)
+})
+
 app.get("/", (req,res)=>{
     res.send("football flix server in runnig");
 });
