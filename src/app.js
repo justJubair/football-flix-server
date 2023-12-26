@@ -6,9 +6,11 @@ const app = express()
 const port = process.env.PORT || 5000;
 
 const sliderRoutes = require("./routes/sliders/index")
+const playerRoutes = require("./routes/players/index")
 
 applyMiddleware(app)
 app.use(sliderRoutes)
+app.use(playerRoutes)
 
 app.get("/health", (req,res)=>{
     res.send("Football is running on mongoose")

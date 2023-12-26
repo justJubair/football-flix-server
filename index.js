@@ -45,11 +45,11 @@ const playersCollection = client.db("footballFlixDB").collection("players")
 // Database collection ends
 
 // GET endpoint for sliders
-app.get("/api/v1/sliders", async(req, res)=>{
-    const cursor = slidersCollection.find()
-    const result = await cursor.toArray()
-    res.send(result)
-})
+// app.get("/api/v1/sliders", async(req, res)=>{
+//     const cursor = slidersCollection.find()
+//     const result = await cursor.toArray()
+//     res.send(result)
+// })
 
 // GET endpoint for players
 app.get("/api/v1/players", async(req,res)=>{
