@@ -1,10 +1,16 @@
 const Players = require("../../models/Players");
 
 const getPlayers = async(req,res)=>{
-    const page = parseInt(req.query?.page)
-    const limit = parseInt(req.query?.limit)
-    const skip = (page)*limit;
-    const result = await Players.find().skip(skip).limit(limit)
+    // const options = {
+    //     page: parseInt(req.query?.page),
+    //     limit: parseInt(req.query?.limit)
+    // }
+   
+   
+    
+    // const result = await Players.paginate({}, options)
+    const result = await Players.find();
+    res.send(result);
     res.send(result)
 }
 

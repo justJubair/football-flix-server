@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const mongoosePaginate = require("mongoose-paginate")
 const {Schema} = mongoose;
 
 const PlayersSchema = new Schema({
@@ -11,6 +12,8 @@ const PlayersSchema = new Schema({
     season_contract_price: Number
 })
 
+
+// PlayersSchema.plugin(mongoosePaginate)
 const Players = mongoose.model("Players", PlayersSchema);
 
 module.exports= Players
