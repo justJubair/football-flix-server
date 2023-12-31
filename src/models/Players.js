@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-// const mongoosePaginate = require("mongoose-paginate")
+const mongoosePaginate = require("mongoose-paginate-v2")
 const {Schema} = mongoose;
 
 const PlayersSchema = new Schema({
@@ -13,7 +13,7 @@ const PlayersSchema = new Schema({
 })
 
 
-// PlayersSchema.plugin(mongoosePaginate)
+PlayersSchema.plugin(mongoosePaginate)
 const Players = mongoose.model("Players", PlayersSchema);
 
 module.exports= Players
